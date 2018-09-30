@@ -1,0 +1,33 @@
+{# empty Twig template #}
+{% extends "base.html.twig"%}
+{% block body %}
+    <div id="photos">
+    <div class="card-group">
+        <div class="card" >
+      <img class="card-img-top" src="bundle/images/1.jpeg" style="width: 100% !important; height: 60% !important; border-radius: 10px 10px 10px 10px !important;" alt="Organe de sécurité">
+    <div class="card-body">
+      <h5 class="card-title">Organe de sécurité</h5>
+      <p class="card-text">Organe de sécurité  très important H.S (pré-déclenchement )
+Chez ETINCEL ont restent toujours vigilant  très vigilant  lors des maintenances</p>
+      <a id="contacter2"  class="btn btn-outline-success" href="{{ url('contact') }}">Nous contacter</a>
+          </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="bundle/images/2.jpeg" style="width: 100% !important; height: 60% !important; border-radius: 10px 10px 10px 10px !important;" alt="Expertise sur batterie CONDO">
+    <div class="card-body">
+      <h5 class="card-title">Expertise sur batterie CONDO </h5>
+      <p class="card-text">Voilà le résulta : mauvais serrage sur la phase ( Avant réparation )</p>
+      <a id="contacter3"  class="btn btn-outline-success" href="{{ url('contact') }}">Nous contacter</a>
+         </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="bundle/images/3.jpeg"  style="width: 100% !important; height: 60% !important; border-radius: 10px 10px 10px 10px !important;" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Welcome in my  world</h5>
+      <p class="card-text">Bienvenue dans mon monde</p>
+   <a id="contacter4"  class="btn btn-outline-success" href="{{ url('contact') }}">Nous contacter</a>
+    </div>
+  </div>
+</div>
+    </div>
+    {% endblock %}

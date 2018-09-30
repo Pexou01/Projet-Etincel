@@ -1,0 +1,139 @@
+.nav{
+    margin-left: 23%;
+    
+}
+html, body {
+	height: 100%;
+	margin: 0; 
+        padding: 0;
+    background-image:url(/bundle/images/fond.jpg) ;
+    background-repeat:no-repeat;
+    background-size: 170% !important;
+    
+}
+body {
+	display : table;
+	width: 100%;
+     
+        
+        
+}
+footer {
+	display : table-row;
+	height: 100px; /* à titre d'exemple */
+}
+.nous{
+    text-align: center;
+    margin-left: 16%;
+    
+}
+.dropdown-menu{
+    border-radius: 10px 10px 10px 10px !important;
+    background-color: #ececef !important;
+}
+#photos{
+    margin-top: 8% ;
+    size: 20% !important;
+    border-radius: 10px 10px 10px 10px !important;
+}
+#contacter{
+    margin-left: 32% !important;
+    margin-top:  20%!important;
+}
+#contacter2{
+    margin-left: 32% !important;
+    margin-top:  26%!important;
+}
+#contacter3{
+    margin-left: 32% !important;
+    margin-top:  32%!important;
+}
+.card{
+    border-radius: 10px 10px 10px 10px !important; 
+    border-color: #7272f7 !important;  
+    box-shadow: 8px 8px 0px #aaa;
+}
+.card-body{
+    background-color: #fdf9f4;
+     border-radius: 10px 10px 10px 10px !important; 
+}
+#copy{
+    color: white;
+}
+#phone{
+    margin-left: 25%;
+    margin-top: -16%;
+    border: double red ;
+    margin-right: 48%;
+    background-color:  white;
+    border-radius: 10px 10px 10px 10px !important; 
+     border-width: medium !important;
+   
+}
+#mail{
+    margin-left: 55%;
+    margin-top: 7%;
+    border: double red ;
+    margin-right: 20%;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px !important; 
+    border-width: medium !important;
+
+}
+#mailer{
+    margin-left:55%;
+ 
+}
+#confirm{
+    margin-top: -23%;
+     background-color:  #9999ff;
+     border-radius: 10px 10px 10px 10px !important; 
+     border-width: medium !important;
+     border-color: red;
+    width:  70%;
+    margin-right:  8%;
+    box-shadow: 8px 8px 0px #aaa;
+     
+     
+}
+#fat{
+    font-weight: bold;
+}
+#tt{
+    margin-left: -78% !important;
+    margin-top: -40% !important;
+    
+}
+#dd{
+    margin-left: -78% !important;
+    margin-top: -22% !important;
+    
+}
+#ff{
+    margin-left: 11%;
+  margin-top: -8%;
+    
+}
+#gg{
+    margin-left: -78% !important;
+    margin-top: -40% !important;
+    
+}
+#carouselExampleSlidesOnly{
+    margin-top: -45% !important; 
+   max-width: 280px !important;
+    background-color: white !important;
+
+}
+#contacter4{
+    margin-top: 38% !important;
+    margin-left: 33% !important;
+}
+#jj{
+    margin-top: -27%;
+    margin-left: 37%;
+    border-radius: 10px 10px 10px 10px !important;
+}
+#ss{
+    margin-left: 6%;
+}

@@ -1,0 +1,22 @@
+{# empty Twig template #}
+{% extends "base.html.twig"%}
+{% block body %}
+    <div id="ff"> 
+                   <img class="d-block w-40" style="margin: 0 auto;border-radius: 10px 10px 10px 10px !important;" src="bundle/images/3.jpeg" height="100" width="800" alt="First slide">
+          
+                   </div>
+    <div id="mail">
+        <img  src="bundle/images/logo_mail.png" alt="" width="200" height="200" />
+        <a class="btn btn-outline-info" id="ss" href="{{ url('mail') }}">Mail</a>
+    </div>
+    <div id="phone">
+        <img  src="bundle/images/logo_phone.jpg" alt="" width="200" height="200"/>
+        <a class="btn btn-outline-info" id='jj' href="#" >ETINCEL<br> 20 avenue Albert Einstein <br>93150<br>
+            LE BLANC -MESNIL<br> Tél. : 01.80.89.45.86<br> Port : 06.40.50.80.78</a>
+    </div>
+    <div id="dd"> 
+                   <img class="d-block w-40" style="margin: 0 auto;border-radius: 10px 10px 10px 10px !important;" src="bundle/images/1.jpeg" height="280" width="250" alt="First slide">
+          
+                   </div>
+    
+    {% endblock %}

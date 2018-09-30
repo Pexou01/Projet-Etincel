@@ -1,0 +1,27 @@
+{# héritage du fichier basee.html.twig#}
+{% extends "base.html.twig"%}
+{% block title %}Contact{% endblock %}
+{% block body %}
+     <div id="mailer">
+         <img  src="bundle/images/logo_mail.png" alt="" width="200" height="200" />
+                   </div>  
+ <div id="confirm" class="container" >
+       <div class="row">
+           <div class="col-sm-4">
+               <h2 class="page-header">Contact</h2>
+ 
+                   {{form_start(form)}}
+                   {{form_widget(form)}}
+                   {{form_end(form)}}
+                      
+ 
+           </div>
+       </div>
+                     
+</div>
+                   <div id="gg"> 
+                   <img class="d-block w-40" style="margin: 0 auto;border-radius: 10px 10px 10px 10px !important;" src="bundle/images/1.jpeg" height="500" width="250" alt="First slide">
+          
+                   </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{# empty Twig template #}
+{# empty Twig template #}
+{% extends "base.html.twig"%}
+{% block body %}
+    
+    <div id="mail">
+        <img  src="bundle/images/logo_mail.png" alt="" width="200" height="200" />
+        <a class="btn btn-outline-info" href="{{ url('mail') }}">Mail</a>
+    </div>
+    <div id="phone">
+        <img  src="bundle/images/logo_phone.jpg" alt="" width="250" height="250"/>
+        <a class="btn btn-outline-info" href="{{ url('phone') }}">phone</a>
+    </div>
+    {% endblock %}

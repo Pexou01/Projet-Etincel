@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Scripts javascript : Aperçu</title>
+<style type="text/css">
+.clDivs {position:absolute; width:30px; height:30px; left:0px; font-size:80px; font-weight:bold; font-family:arial black,arial,helvetica,sans-serif; color:#999999; visibility:hidden;} 
+</style>
+<script language="JavaScript" type="text/javascript">
+/*
+*   Thomas Brattli
+*   This script was released at DHTMLCentral.com
+*   We will also appreciate any links you could give us.
+*   Made by <a href="/dhtmlcentral/thomas_brattli.asp">Thomas Brattli</a> 
+traduction outils-web.com
+*/
+
+function lib_bwcheck(){ 
+	this.ver=navigator.appVersion
+	this.agent=navigator.userAgent
+	this.dom=document.getElementById?1:0
+	this.opera5=this.agent.indexOf("Opera 5")>-1
+	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom && !this.opera5)?1:0; 
+	this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom && !this.opera5)?1:0;
+	this.ie4=(document.all && !this.dom && !this.opera5)?1:0;
+	this.ie=this.ie4||this.ie5||this.ie6
+	this.mac=this.agent.indexOf("Mac")>-1
+	this.ns6=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie6 || this.ie5 || this.ie4 || this.ns4 || this.ns6 || this.opera5)
+	return this
+}
+var bw=new lib_bwcheck()
+
+numberOfLetters=11 //nombre de lettres
+ypos=-200 //position verticale par rapport au centre
+
+
+//testing=1 permet de shunter l'animation, afin de pouvoir régler la position des lettres
+testing=0
+//Position horizontale des lettres en px
+xpos=new Array()
+xpos[0] = -310
+xpos[1] = -245
+xpos[2] = -195
+xpos[3] = -160
+xpos[4] = -125
+xpos[5] = -93
+xpos[6] = -20
+xpos[7] = 25
+xpos[8] = 95
+xpos[9] = 145
+xpos[10] = 200
+
+//type animation : 1,2,3 ou 4 pour aléatoire
+animation=4
+aspeed=20 //vitesse animation
+
+function makeObj(obj,speed,xmove,ymove,works){
+	this.el=bw.dom? document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?document.layers[obj]:0;	
+  	this.css=bw.dom || bw.ie4?this.el.style:bw.ns4?this.el:0;
+	this.moveIt=b_moveIt;
+}
+
+var px = bw.ns4||window.opera?"":"px";
+
+function b_moveIt(x,y){this.x=x; this.y=y; this.css.left=this.x+px; this.css.top=this.y+px;}
+
+var posArray,oZdivs;
+function introInit(){
+	pageXcenter = bw.op5||bw.ns4 ||bw.ns6?innerWidth/2:document.body.offsetWidth/2
+	pageYcenter = bw.op5||bw.ns4||bw.ns6?innerHeight/2:document.body.offsetHeight/2
+	oZdivs = new Array()
+	for(var i=0; i<numberOfLetters; i++){
+		oZdivs[i] = new makeObj('div'+i)
+		oZdivs[i].moveIt(-200,0)
+		oZdivs[i].css.visibility = "visible"
+	}
+	if (animation==4) animation = Math.round(Math.random()*2)+1
+	if (!testing) eval('anim'+animation+'(0)')
+	else testIt()
+}
+function testIt(){
+	alert(pageYcenter)
+	for(var i=0; i<oZdivs.length; i++){
+    	oZdivs[i].moveIt((pageXcenter+xpos[i]),(pageYcenter+ypos))
+	}	
+}
+
+//Intro 1
+xPath1 = new Array(-277,-271,-264,-255,-245,-234,-223,-210,-196,-181,-161,-134,-98,-52,1,53,98,131,151,156,147,124,92,59,0)
+yPath1 = new Array(-240,-206,-162,-114,-64,-16,29,71,112,151,187,217,241,255,260,254,239,213,179,143,108,77,51,30,0)
+function anim1(num,test){
+	if (num<oZdivs.length){
+		st = test?test:0;
+		animX(num,'xPath1','yPath1',aspeed,st,'anim1('+(num+1)+','+st+')')
+	}else endanim(0)
+}
+//Intro 2
+xPath2 = new Array(-285,-270,-255,-240,-225,-210,-195,-180,-165,-150,-135,-120,-105,-90,-75,-60,-45,-30,-15,0)
+yPath2 = new Array(-353,-344,-335,-324,-312,-299,-285,-270,-254,-236,-218,-198,-177,-155,-132,-108,-83,-56,-29,0)
+function anim2(num){
+	if (num<oZdivs.length){
+		animX(num,'xPath2','yPath2',aspeed,0,'anim2('+(num+1)+')')
+	}else endanim(0)
+}
+//Intro 3
+xPath3 = new Array(0,-2,-6,-13,-23,-36,-50,-66,-83,-100,-117,-134,-150,-164,-177,-187,-194,-198,-200,-198,-194,-187,-177,-164,-150,-134,-117,-100,-83,-66,-50,-36,-23,-13,-6,-2,0)
+yPath3 = new Array(0,-17,-34,-50,-64,-77,-87,-94,-98,-100,-98,-94,-87,-77,-64,-50,-34,-17,0,17,34,50,64,77,87,94,98,100,98,94,87,77,64,50,34,17,0)
+function anim3(num){
+	if (num<oZdivs.length){
+		animX(num,'xPath3','yPath3',aspeed,0,'anim3('+(num+1)+')')
+	}else endanim(0)
+}
+
+function animX(divnum,arrayX,arrayY,speed,num,fn){
+	arrayXr = new Array(); arrayYr = new Array()
+	arrayXr = eval(arrayX); arrayYr = eval(arrayY)
+	arrayX = "'"+arrayX+"'"; arrayY = "'"+arrayY+"'"
+	if (num<arrayXr.length){
+    	oZdivs[divnum].moveIt(arrayXr[num]+(pageXcenter+xpos[divnum]),arrayYr[num]+(pageYcenter+ypos))
+		num ++;
+		setTimeout("animX("+divnum+","+arrayX+","+arrayY+","+speed+","+num+",'"+fn+"')",speed)
+	}else eval(fn)
+}
+//action après l'intro
+function endanim(num){
+	if (num<oZdivs.length){
+		oZdivs[num].css.visibility = "hidden" 
+		num ++
+		setTimeout("endanim("+num+")",300)
+	}else{
+		location.href="http://www.outils-web.com" //pour rediriger ver une autre page
+	}
+}
+onload = introInit;
+</script>
+</head>
+
+<body marginleft="0" marginheight="0" bgcolor="#FFFFFF">
+
+<br /><p class="tt" >Effet de texte</p><br /><br />
+
+<div id="div0" class="clDivs">O</div>
+<div id="div1" class="clDivs">u</div>
+<div id="div2" class="clDivs">t</div>
+<div id="div3" class="clDivs">i</div>
+<div id="div4" class="clDivs">l</div>
+<div id="div5" class="clDivs">s</div>
+<div id="div6" class="clDivs">-</div>
+<div id="div7" class="clDivs">W</div>
+<div id="div8" class="clDivs">e</div>
+<div id="div9" class="clDivs">b</div>
+<div id="div10" class="clDivs">!</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{# empty Twig template #}
+
+{% block body %}
+<div id="email">
+<h3>Bonjour</h3>
+<p>Votre Message a été envoyé avec succes.</p>
+<h3>Voici votre demande de contact :</h3>
+<p>Votre nom : {{ name }}</p>
+
+<p>Votre téléphone : {{ telephone }}</p>
+<p>Votre Email : {{ email }}</p>
+<p>Votre sujet : {{ suject }}</p>
+<p>Votre message : {{ message }}</p>
+<p>A très bientôt sur notre site!</p>
+<p>Merci!</p>
+</div>
+{% endblock %}
